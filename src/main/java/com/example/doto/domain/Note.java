@@ -1,19 +1,27 @@
 package com.example.doto.domain;
 
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Entity
-public class Message {
+public class Note {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
 
     private Integer id;
     private Integer priority;
     private String text;
+
+    public Note() {
+
+    }
+
+    public Note(String text, Integer priority) {
+        this.text = text;
+        this.priority = priority;
+    }
 
     public Integer getId() {
         return id;

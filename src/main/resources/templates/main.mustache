@@ -1,7 +1,7 @@
 <html>
 <body>
     <div>
-        <form action="post">
+        <form method="POST">
             <input type="text" name="text" placeholder="Введите задачу">
             <input type="number" name="priority" placeholder="Приоритет">
             <button type="submit">Добавить</button>
@@ -9,12 +9,12 @@
     </div>
 
     <div>Список</div>
-    {{#messages}}
+    {{#notes}}
         <div>
             <b>{{id}}</b>
             <b>{{text}}</b>
             <b>{{priority}}</b>
         </div>
-    {{/messages}}
+    {{/notes}}
 </body>
 </html>
