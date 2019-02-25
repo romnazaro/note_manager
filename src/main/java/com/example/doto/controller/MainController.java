@@ -1,4 +1,4 @@
-package com.example.doto;
+package com.example.doto.controller;
 
 
 import com.example.doto.domain.Note;
@@ -16,7 +16,7 @@ public class MainController {
     @Autowired
     private NoteRepo noteRepo;
 
-    @GetMapping
+    @GetMapping("/main")
     public String main(Map<String, Object> model) {
         Iterable<Note> notes = noteRepo.findAll();
         model.put("notes", notes);
@@ -24,7 +24,7 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping
+    @PostMapping("/main")
     public String addNote(@RequestParam String text, @RequestParam Integer priority, Map<String, Object> model) {
         Note note = new Note(text, priority);
         noteRepo.save(note);
