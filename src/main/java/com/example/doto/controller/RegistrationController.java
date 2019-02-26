@@ -2,7 +2,7 @@ package com.example.doto.controller;
 
 import com.example.doto.domain.Role;
 import com.example.doto.domain.User;
-import com.example.doto.repos.UserRepo;
+import com.example.doto.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

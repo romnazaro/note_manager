@@ -1,9 +1,6 @@
 package com.example.doto.domain;
 
-import javax.persistence.Id;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 @Entity
 public class Note {
@@ -14,14 +11,32 @@ public class Note {
     private Integer priority;
     private String text;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User author;
+
+
     public Note() {
 
     }
 
-    public Note(String text, Integer priority) {
+    public Note(String text, Integer priority, User user) {
+        this.author = user;
         this.text = text;
         this.priority = priority;
     }
+
+    public String getAuthorName(){
+        return author !=null ? author.getUsername() : "<None>";
+    }
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        author = author;
+    }
+
 
     public Integer getId() {
         return id;

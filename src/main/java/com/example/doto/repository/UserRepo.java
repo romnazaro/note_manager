@@ -1,4 +1,4 @@
-package com.example.doto.repos;
+package com.example.doto.repository;
 
 import com.example.doto.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
