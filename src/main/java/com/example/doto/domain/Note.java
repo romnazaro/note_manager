@@ -15,6 +15,8 @@ public class Note {
     @JoinColumn(name = "user_id")
     private User author;
 
+    private String fileName;
+
 
     public Note() {
 
@@ -60,5 +62,13 @@ public class Note {
 
     public void setPriority(Integer priority) {
         this.priority = priority;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 }

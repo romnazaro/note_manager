@@ -3,6 +3,6 @@
 <@cm.page>
 
 Create new User
-${message}
+${message?if_exists}
 <@log.login "/registration" />
 </@cm.page>
