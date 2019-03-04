@@ -1,9 +1,6 @@
-<#import "parts/common.ftl" as cm>
-<#import "parts/login.ftl" as log>
-<@cm.page>
+<#import "parts/common.ftl" as c>
+<#import "parts/login.ftl" as l>
 
-Авторизация
-<@log.login "/login" />
-<a href="/registration">Регистрация</a>
-
-</@cm.page>
+<@c.page>
+    <@l.login "/login" false/>
+</@c.page>

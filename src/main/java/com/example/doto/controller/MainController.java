@@ -26,7 +26,7 @@ public class MainController {
     @Value("${upload.path}")
     private String uploadPath;
 
-    @GetMapping("/main")
+    @GetMapping("/")
     public String main(Map<String, Object> model) {
         Iterable<Note> notes = noteRepo.findAll();
         model.put("notes", notes);
