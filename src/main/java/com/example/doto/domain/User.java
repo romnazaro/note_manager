@@ -20,6 +20,9 @@ public class User implements UserDetails {
 
     private boolean active;
 
+    private String email;
+    private String activateCode;
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
@@ -27,6 +30,22 @@ public class User implements UserDetails {
 
     public boolean isAdmin(){
         return roles.contains(Role.ADMIN);
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getactivateCode() {
+        return activateCode;
+    }
+
+    public void setactivateCode(String activeUs) {
+        this.activateCode = activeUs;
     }
 
     public Long getId() {
